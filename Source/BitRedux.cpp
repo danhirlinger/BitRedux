@@ -46,9 +46,11 @@ float BitRedux::processSample(int c, float x){
 void BitRedux::processSignal(juce::AudioBuffer<float> &buffer){
     for (int c = 0; c < C; c++){
         for (int n = 0; n < N; n++){
-            float x = buffer.getReadPointer(c)[n];
-            x = processSample(c,n);
+            float in = buffer.getReadPointer(c)[n];
+            float x = processSample(c,in);
             buffer.getWritePointer(c)[n] = x;
+            // want to add dry/wet capabilities
+            // (dryWet*x) + ((dryWet-1)*(in))
         }
     }
 }

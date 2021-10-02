@@ -31,6 +31,7 @@ public:
     int C;
     int N;
     int M; // number of bits
+    float dryWet = 0.f; // 0 = dry ; 1 = wet
     float ditherFactor = 0.001f;
     
 private:   
