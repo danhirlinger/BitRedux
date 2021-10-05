@@ -20,7 +20,7 @@ void BitRedux::prepare(const juce::dsp::ProcessSpec &spec){
     C = spec.numChannels;
     N = spec.maximumBlockSize;
     M = 8;
-    setAmpLevels();
+    setAmpLevels(M);
 }
 
 float BitRedux::processSample(float x){
@@ -28,17 +28,17 @@ float BitRedux::processSample(float x){
     xProcess = x + dither;
     
     // Change scale [-1:1] >> [0:1]
-    xProcess = (0.5f * x) + 0.5;
+    xProcess = (0.5f * x) + 0.5f;
     
     // Multiply by # of ampLevels (from parameter)
     xProcess = ampLevels * xProcess;
-//    xProcess = round(xProcess);
-    
+    xProcess = round(xProcess);
+
     // Divide by ampLevels to return to range [0:1]
-    xProcess = xProcess * (1/ampLevels);
-    
+    xProcess = xProcess * (1.f/ampLevels);
+
     // Revert scale [0:1] >> [-1:1]
-    xProcess = (xProcess * 2) - 1;
+    xProcess = (xProcess * 2.f) - 1.f;
     
     return xProcess;
 }
@@ -57,11 +57,12 @@ void BitRedux::processSignal(juce::AudioBuffer<float> &buffer){
 
 void BitRedux::createDither(){
 // Create dither to be added to signal
-    dither = ditherFactor * ((rand() * 2.f) - 1.f);
+//    dither = ditherFactor * ((rand() * 2.f) - 1.f);
+    dither = 0;
 }
 
-void BitRedux::setAmpLevels(){
-    ampLevels = 2^M;
+void BitRedux::setAmpLevels(int newM){
+    ampLevels = 2^newM;
 }
 
 

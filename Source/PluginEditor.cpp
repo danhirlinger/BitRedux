@@ -51,6 +51,6 @@ void BitReduxAudioProcessorEditor::resized()
 void BitReduxAudioProcessorEditor::sliderValueChanged(juce::Slider * slider){
     if (slider == &numBits){
         BitRedux.M = numBits.getValue();
-        BitRedux.setAmpLevels();
+        BitRedux.setAmpLevels(numBits.getValue());
     }
 }

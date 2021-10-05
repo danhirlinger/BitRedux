@@ -25,7 +25,7 @@ public:
     
     void createDither();
     
-    void setAmpLevels();
+    void setAmpLevels(int newM);
     
     int Fs;
     int C;
