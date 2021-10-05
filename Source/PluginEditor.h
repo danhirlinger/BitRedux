@@ -11,6 +11,7 @@
 #include <JuceHeader.h>
 #include "BitRedux.h"
 #include "PluginProcessor.h"
+#include "Knob1.h"
 
 //==============================================================================
 /**
@@ -29,6 +30,8 @@ public:
     
     
     juce::Slider numBits;
+    
+    Knob1 knob1;
 
 private:
     

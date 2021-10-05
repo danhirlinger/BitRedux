@@ -23,7 +23,7 @@ void BitRedux::prepare(const juce::dsp::ProcessSpec &spec){
     setAmpLevels();
 }
 
-float BitRedux::processSample(int c, float x){
+float BitRedux::processSample(float x){
     createDither();
     xProcess = x + dither;
     
@@ -32,7 +32,7 @@ float BitRedux::processSample(int c, float x){
     
     // Multiply by # of ampLevels (from parameter)
     xProcess = ampLevels * xProcess;
-    xProcess = round(xProcess);
+//    xProcess = round(xProcess);
     
     // Divide by ampLevels to return to range [0:1]
     xProcess = xProcess * (1/ampLevels);
@@ -47,7 +47,7 @@ void BitRedux::processSignal(juce::AudioBuffer<float> &buffer){
     for (int c = 0; c < C; c++){
         for (int n = 0; n < N; n++){
             float in = buffer.getReadPointer(c)[n];
-            float x = processSample(c,in);
+            float x = processSample(in);
             buffer.getWritePointer(c)[n] = x;
             // want to add dry/wet capabilities
             // (dryWet*x) + ((dryWet-1)*(in))

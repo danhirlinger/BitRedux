@@ -93,8 +93,9 @@ void BitReduxAudioProcessor::changeProgramName (int index, const juce::String& n
 //==============================================================================
 void BitReduxAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+    spec.sampleRate = sampleRate;
+    
+    BitRedux.prepare(spec);
 }
 
 void BitReduxAudioProcessor::releaseResources()
@@ -147,7 +148,7 @@ void BitReduxAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     {
         for (int n = 0; n < buffer.getNumSamples(); n++){
             float x = buffer.getReadPointer(channel)[n];
-            x = BitRedux.processSample(channel, x);
+            x = BitRedux.processSample(x);
             buffer.getWritePointer(channel)[n] = x;
         }
     }

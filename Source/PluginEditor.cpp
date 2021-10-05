@@ -18,10 +18,13 @@ BitReduxAudioProcessorEditor::BitReduxAudioProcessorEditor (BitReduxAudioProcess
     setSize (400, 300);
     
     numBits.addListener(this);
-    numBits.setBounds(100, 100, 100, 100);
-    numBits.setSize(150, 150);
+    numBits.setBounds(70, 65, 150, 150);
+    numBits.setSize(80, 100);
     numBits.setRange(2,16,1);
+    numBits.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
+    numBits.setTextBoxStyle(Slider::TextBoxBelow, false, 75, 25);
     numBits.setValue(BitRedux.M);
+    numBits.setLookAndFeel(&knob1);
     
     addAndMakeVisible(numBits);
 }
@@ -34,11 +37,8 @@ BitReduxAudioProcessorEditor::~BitReduxAudioProcessorEditor()
 void BitReduxAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
+    g.fillAll (Colours::whitesmoke);
+    
 }
 
 void BitReduxAudioProcessorEditor::resized()

@@ -57,6 +57,8 @@ public:
 private:
     
     BitRedux BitRedux;
+    
+    dsp::ProcessSpec spec;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BitReduxAudioProcessor)
 };

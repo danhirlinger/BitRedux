@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="Fg8ZUX" name="BitRedux" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="1" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="QvGvem" name="BitRedux">
     <GROUP id="{F101EB10-0622-8502-903C-C37A69425535}" name="Source">
       <FILE id="hnmphi" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -13,6 +13,12 @@
       <FILE id="IUZvF9" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="sqBsPK" name="BitRedux.cpp" compile="1" resource="0" file="Source/BitRedux.cpp"/>
       <FILE id="xtHqsp" name="BitRedux.h" compile="0" resource="0" file="Source/BitRedux.h"/>
+    </GROUP>
+    <GROUP id="{ED47D09C-151C-C807-B3F9-E0B50DDCF911}" name="Components">
+      <FILE id="Oqys8g" name="Knob1.h" compile="0" resource="0" file="Source/Knob1.h"/>
+    </GROUP>
+    <GROUP id="{D2A2AD97-8B36-842D-E7D3-061EEFF322FE}" name="Images">
+      <FILE id="xDf6ze" name="knob_06_128.png" compile="0" resource="1" file="Source/knob_06_128.png"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>

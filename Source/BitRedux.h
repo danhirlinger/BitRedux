@@ -18,7 +18,7 @@ public:
     
     void prepare(const juce::dsp::ProcessSpec& spec);
     
-    float processSample(int c, float x);
+    float processSample(float x);
     
     // juce::AudioBuffer<float> &buffer
     void processSignal(juce::AudioBuffer<float> &buffer);
