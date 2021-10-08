@@ -13,6 +13,7 @@
       <FILE id="IUZvF9" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
       <FILE id="sqBsPK" name="BitRedux.cpp" compile="1" resource="0" file="Source/BitRedux.cpp"/>
       <FILE id="xtHqsp" name="BitRedux.h" compile="0" resource="0" file="Source/BitRedux.h"/>
+      <FILE id="C5MjDl" name="DryWet.h" compile="0" resource="0" file="Source/DryWet.h"/>
     </GROUP>
     <GROUP id="{ED47D09C-151C-C807-B3F9-E0B50DDCF911}" name="Components">
       <FILE id="Oqys8g" name="Knob1.h" compile="0" resource="0" file="Source/Knob1.h"/>

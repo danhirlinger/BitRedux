@@ -20,10 +20,10 @@ BitReduxAudioProcessorEditor::BitReduxAudioProcessorEditor (BitReduxAudioProcess
     numBits.addListener(this);
     numBits.setBounds(70, 65, 150, 150);
     numBits.setSize(80, 100);
-    numBits.setRange(2,16,1);
+    numBits.setRange(2.f,24.f,1.f);
     numBits.setSliderStyle(Slider::SliderStyle::RotaryHorizontalVerticalDrag);
     numBits.setTextBoxStyle(Slider::TextBoxBelow, false, 75, 25);
-    numBits.setValue(BitRedux.M);
+    numBits.setValue(audioProcessor.BitRedux.M);
     numBits.setLookAndFeel(&knob1);
     
     addAndMakeVisible(numBits);
@@ -50,7 +50,7 @@ void BitReduxAudioProcessorEditor::resized()
 
 void BitReduxAudioProcessorEditor::sliderValueChanged(juce::Slider * slider){
     if (slider == &numBits){
-        BitRedux.M = numBits.getValue();
-        BitRedux.setAmpLevels(numBits.getValue());
+        audioProcessor.BitRedux.M = numBits.getValue();
+        audioProcessor.BitRedux.setAmpLevels(numBits.getValue());
     }
 }

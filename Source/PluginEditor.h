@@ -34,11 +34,12 @@ public:
     Knob1 knob1;
 
 private:
-    
-    BitRedux BitRedux;
+
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     BitReduxAudioProcessor& audioProcessor;
+    
+    BitRedux BitRedux;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BitReduxAudioProcessorEditor)
 };

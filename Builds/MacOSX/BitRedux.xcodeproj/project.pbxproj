@@ -512,6 +512,13 @@
 			path = System/Library/Frameworks/QuartzCore.framework;
 			sourceTree = SDKROOT;
 		};
+		BD210B2079BA1F0315BBAE17 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = DryWet.h;
+			path = ../../Source/DryWet.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		BE717C27CDF4CB670A486B27 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -633,6 +640,7 @@
 				7FB9988E48027802E3764018,
 				7EB75694F161360CAB30A2C8,
 				77C27C749B747C822BC053EA,
+				BD210B2079BA1F0315BBAE17,
 			);
 			name = Source;
 			sourceTree = "<group>";
